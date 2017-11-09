@@ -6,3 +6,13 @@ post_path(@post),
 method: :delete, 
 class: 'command',
 data: { confirm: 'Sure?' } %>
+
+<h3>Comments</h3>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+<p>
+    <%= f.text_field :body, placeholder: 'comment..' %>
+</p>
+<p>
+    <%= f.submit %>
+</p>
+<% end %>
