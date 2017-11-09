@@ -1,2 +1,8 @@
 <h2><%= @post.title %></h2>
 <p><%= simple_format @post.body %></p>
+
+<%= link_to  '[Delete]', 
+post_path(@post), 
+method: :delete, 
+class: 'command',
+data: { confirm: 'Sure?' } %>
