@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     #render plain: params[:post].inspect
-    @post = Post.new(post_rules)
+    @post = Post.new(post_params)
     if @post.save
       redirect_to posts_path
     else
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
 
   private
-    def post_rules
+    def post_params
       params.require(:post).permit(:title, :body)
     end
 
